@@ -236,7 +236,7 @@ def buildAndTest(String DISTRO, String buildArch) {
                 'ppc64le': 'ppc64el',
                 's390x'  : 's390x'
             ]
-            def buildCli = "./gradlew ${gBuildTask} --parallel -PPRODUCT=${env.PRODUCT} -PPRODUCT_VERSION=${VERSION} -PARCH=${debArchList[buildArch]}"
+            def buildCli = "./gradlew ${gBuildTask}  --stacktrace --scan --debug --parallel -PPRODUCT=${env.PRODUCT} -PPRODUCT_VERSION=${VERSION} -PARCH=${debArchList[buildArch]}"
             buildCli = params.enableDebug.toBoolean() ? buildCli + ' --stacktrace' : buildCli
             sh("$buildCli")
         }
