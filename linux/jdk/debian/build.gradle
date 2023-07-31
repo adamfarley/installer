@@ -99,6 +99,7 @@ task packageJdkDebian {
 			}
 		}
 
+
 		project.exec {
 			workingDir "src/main/packaging"
 			commandLine "docker", "build", "--no-cache", "--stacktrace", "--scan", "--debug",
