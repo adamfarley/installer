@@ -101,7 +101,7 @@ task packageJdkDebian {
 
 		project.exec {
 			workingDir "src/main/packaging"
-			commandLine "echo", "\'abcdefg\'", ">", "/ssd/jenkins/workspace/adoptium-packages-linux-pipeline_new/jdk/debian/std.out"
+			commandLine "echo abcdefg"
 		}
 
 		project.exec {
