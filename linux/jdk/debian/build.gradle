@@ -101,12 +101,7 @@ task packageJdkDebian {
 
 		project.exec {
 			workingDir "src/main/packaging"
-			commandLine "echo abcdefg"
-		}
-
-		project.exec {
-			workingDir "src/main/packaging"
-			commandLine "docker", "build", "--no-cache", "--stacktrace", "--scan", "--debug",
+			commandLine "docker", "build", "--no-cache",
 				"-t", "adoptium-packages-linux-jdk-debian",
 				"-f", "Dockerfile",
 				getProjectDir().absolutePath + "/src/main/packaging", "> ${buildDir}/jdk/stdout.txt 2> ${buildDir}/jdk/stderr.txt"
